@@ -12,4 +12,26 @@ app.get('/home',function(req,res){
     res.render('pages/home');
 });
 
-console.log('App is running at http://localhost:8080');
+//Display all Students
+app.get('/products',function(req,res){
+var mysql = require('mysql')
+var connection = mysql.createConnection({
+  host     : 'www.db4free.net',
+  user     : 's140390',
+  password : 'abc123**',
+  database : 'db140390'
+});
+
+connection.connect()
+
+connection.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
+  if (err) throw err
+
+  console.log('The solution is: ', rows[0].solution)
+})
+connection.end()
+});
+
+
+console.log('App is running at http://localhost:8081');
+app.listen(8081); //8080 ไว้สำหรับtest app
