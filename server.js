@@ -13,4 +13,3 @@ app.get('/home',function(req,res){
 });
 
 console.log('App is running at http://localhost:8080');
-app.listen(8080); //8080 ไว้สำหรับtest app
