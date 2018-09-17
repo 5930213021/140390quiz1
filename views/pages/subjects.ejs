@@ -10,16 +10,17 @@
         </tr>
     </thead>
     <tbody>
-        <% products.forEach(function(product) { %>
+        <% subjects.forEach(function(subject) { %>
         <tr>
-            <td scope="row"><%= product.id %></td>
-            <td><%= product.title %></td>
-            <td><%= product.price %></td>
+            <td scope="rows"><%= subject.code %></td>
+            <td><%= subject.title %></td>
+            <td><%= subject.credits %></td>
+            <td><%= subject.sections %></td>
         </tr>
         <% }); %>
         
         <tr>
-            <td scope="row"></td>
+            <td scope="rows"></td>
             <td></td>
             <td></td>
         </tr>
