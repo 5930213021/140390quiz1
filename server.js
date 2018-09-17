@@ -12,6 +12,6 @@ app.get('/',function(req,res){
 });
 
 app.get('/home',function(req,res){
-    res.render('pages/index');
+    res.render('pages/home');
 });
 
