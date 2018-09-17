@@ -13,8 +13,7 @@ app.get('/home',function(req,res){
 });
 
 //Display all Students
-app.get('/students',function(req,res){
-   
+
 var mysql = require('mysql')
 var connection = mysql.createConnection({
   host     : 'www.db4free.net',
@@ -22,10 +21,12 @@ var connection = mysql.createConnection({
   password : 'abc123**',
   database : 'db140390'
 });
+app.get('/students',function(req,res){
+  
 connection.connect()
-connection.query('select * from products', function (err, rows, fields) {
+connection.query('select * from students', function (err, rows, fields) {
   if (err) throw err
-
+    res.render('pages/students',{students : rows})
   console.log('The solution is: ', rows[0].solution)
 })
 connection.end()
